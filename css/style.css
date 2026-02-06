@@ -1,1 +1,121 @@
+@charset "utf-8";
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-text: "Arial", sans-serif;
+    --font-titular: "Times New Roman", serif;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--font-text);
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8f2e9;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5vh 35vh 1fr 20vh;
+    grid-template-areas:
+        "navegador"
+        "header"
+        "main"
+        "footer";
+}
+
+nav{
+    background-color: rgb(198, 199, 199);
+    grid-area: navegador;
+    justify-items: center;
+    align-content: center;
+}
+
+ul li{
+    display: inline;
+    padding-left: 2rem;
+}
+
+li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+a:hover{
+    color: black;
+}
+
+header{
+    background-image: url(https://lorem.cat/1920x300);
+    background-color: black;
+    grid-area: header;
+}
+
+main{
+    background-color: antiquewhite;
+    grid-area: main;
+    width: 67%;
+    justify-self: center;
+    overflow: hidden;
+}
+
+
+section>section{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+section>section>div button{
+    text-align: center;
+    width: 47%;
+    justify-self: center;
+}
+
+
+section>section>div button:first-of-type{
+    background-color: aqua;
+}
+
+
+main>section{
+    display: grid;
+
+}
+
+main>figure{
+    margin-top: 5rem;
+    justify-self: center;
+}
+
+
+footer{
+    background-color: rgb(49, 51, 51);
+    grid-area: footer;
+    justify-items: center;
+    align-content: center;
+}
+
+
+
+@media(min-width: 1024px){
+    main>section{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        margin-top: 5rem;
+        align-items: center;
+        margin-bottom: 5rem;
+        
+    }
+}
 
