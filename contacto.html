@@ -21,11 +21,10 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="catalogo.html">Cátalogo</a></li>
             <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="#">Nuevos Talentos</a></li>
+            <li><a href="talent.html">Nuevos Talentos</a></li>
             <li><a href="#">Contacto</a></li>
         </ul>
     </nav>
-
 
     <!-- Cabecera -->
     <header>
@@ -37,7 +36,41 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main>
-        
+        <!-- Formulario de contacto -->
+        <section>
+        <h2>CONTACTA CON NOSOTROS</h2>
+        <p>Puedes enviarnos tu consulta rellenando todos los campos. Contactaremos contigo lo antes posible</p>
+        <form action="#" method="post" name="formulario-contacto" id="formulario-contacto" enctype="multipart/form-data">
+            <fieldset>
+                <ul>
+                    <li>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" >
+                    </li>
+                    <li>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido">
+                    </li>
+                    <li>
+                        <label for="main">E-Mail</label>
+                        <input type="email" name="correo" id="correo">
+                    </li>
+                     <label for="info">Mensaje</label>
+                     <textarea name="info" id="info" cols="80" rows="10"></textarea>
+                    <li></li>
+                    <li>
+                        <button type="submit">Enviar formulario</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        </section>
+
+        <!-- Mapa -->
+        <section>
+            <h2>Donde encontrarnos</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.0381415084403!2d2.134054!3d41.4166907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4981b5fdca4b1%3A0x35e8d1d280af19bd!2sCentre%20d&#39;Innovaci%C3%B3%20i%20Formaci%C3%B3%20Ocupacional%20(CIFO)%20de%20Barcelona%20La%20Violeta!5e0!3m2!1ses!2ses!4v1770487015348!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
     </main>
 
     <!-- PIE DE PÁGINA -->
