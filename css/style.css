@@ -162,11 +162,9 @@ main{
     overflow: hidden;
 }
 
-.contenedor{
 
 /* TOP SELLERS / COLLECTORS*/
-#contenedor-top-sellers,
-#contenedor-collector-items{
+.contenedor{
     margin-top: 2rem;   
     margin-bottom: 2rem;
     max-width: 100%;
@@ -356,7 +354,9 @@ footer{
     background-color: var(--bg-color);
     grid-area: footer;
     display: flex;
+    
     align-content: space-evenly;
+    justify-content: center;
     margin-top: 1rem;
 }
 
