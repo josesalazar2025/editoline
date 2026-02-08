@@ -149,6 +149,9 @@ h2{
     color: var(--font-color2);
 }
 
+h3{
+    color: var(--font-precio)
+}
 
 /*MAIN*/
 main{
@@ -161,8 +164,7 @@ main{
 
 
 /* TOP SELLERS / COLLECTORS*/
-#contenedor-top-sellers,
-#contenedor-collector-items{
+.contenedor{
     margin-top: 2rem;   
     margin-bottom: 2rem;
     max-width: 100%;
@@ -173,21 +175,22 @@ main{
     justify-self: center;
 }
 
-#contenedor-top-sellers>h2,
-#contenedor-collector-items>h2{
+.contenedor>h2{
     display: inline-block;
     width: 100%;
     font-size: clamp(var(--h2-section-min), var(--h2-section-ideal), var(--h2-section-max));
 
 }
 
-.tarjeta-precio{
+.tarjeta-precio, article{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
     flex: 1 1 5%;
+    min-width: 30vw;
 }
+
 .tarjeta-precio>div{
     display: flex;
     align-items: center;
@@ -195,20 +198,26 @@ main{
 
 }
 
+article{
+    flex: 1 1 20%;
+    min-width: 50vw;
+}
 
-.tarjeta-precio figure {
+.tarjeta-precio figure, 
+article figure{
     flex: 1 1 10%;
     display: flex;
     align-items: center;
 }
 
-.tarjeta-precio figure>img{
+.tarjeta-precio figure>img,
+article figure>img{
     width: 100%;
     object-fit: contain;
     box-shadow: 2px 1px 4px var(--font-color3);
 }
 
-.tarjeta-precio>div button{
+.tarjeta-precio>div button, .contenedor>article button{
     text-align: center;
     width: 70%;
     border-radius: 1rem;
@@ -219,7 +228,12 @@ main{
     justify-self: flex-end;
 }
 
-.tarjeta-precio>div button:hover{
+.contenedor>article button{
+    width: 100%;
+}
+
+.tarjeta-precio>div button:hover,
+.contenedor>article button:hover{
     cursor: pointer;
     background-color: var(--bg-color3);
     color: var(--font-precio);
@@ -246,6 +260,11 @@ main{
     justify-self: center;
     max-width: 100%;
 }
+
+article p{
+    color: var(--font-precio);
+}
+
 
 
 /* CATALOGO */
@@ -335,7 +354,9 @@ footer{
     background-color: var(--bg-color);
     grid-area: footer;
     display: flex;
+    
     align-content: space-evenly;
+    justify-content: center;
     margin-top: 1rem;
 }
 
@@ -348,33 +369,58 @@ footer img{
 
 /*MEDIA-Q TABLET*/
 @media(min-width: 768px){
-    #contenedor-top-sellers,
-    #contenedor-collector-items{
+    .contenedor{
         flex-direction: row;
+        max-width: 100%;
+        flex: 1 1 25%;
+        margin-bottom: 3rem;
     }
-}
+      main{
+        width: 80%;
+    }
 
-@media(min-width: 768px){
-    #contenedor-top-sellers,
-    #contenedor-collector-items{
-        flex-direction: row;
+    article{
+        flex: 1 1 25%;
+        min-width: 30vw;
     }
+
+
+    .tarjeta-precio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        flex: 1 1 30%;
+        min-width: 20vw;
+}
 }
 
 
 /*MEDIA-Q DESKTOP*/
 @media(min-width: 1024px){
-    #contenedor-top-sellers,
-    #contenedor-collector-items{
+    .contenedor{
         max-width: 95%;
-        gap: 3rem;
+        gap: 2vw;
         margin-top: 5rem;   
         margin-bottom: 10rem;
     }
 
-    .tarjeta-precio{
-        flex: 1 1 15%;
+
+
+    .tarjeta-precio, article{
+        max-width: 30%;
+        flex: 1 1 10%;
         margin-bottom: 3rem;
+        min-width: 10vw;
+    }
+
+    article{
+        max-width: 30%;
+        flex: 1 1 25%;
+        margin-bottom: 3rem;
+        min-width: 10vw;
+
+        
     }
 
     nav{
@@ -393,8 +439,7 @@ footer img{
         justify-content: flex-start;
     }
 
-    #contenedor-top-sellers>h2,
-    #contenedor-collector-items>h2{
+    .contenedor>h2{
         display: inline-block;
         width: 100%;
 
