@@ -164,7 +164,8 @@ main{
 
 
 /* TOP SELLERS / COLLECTORS*/
-.contenedor{
+.contenedor, 
+.contenedor-talentos{
     margin-top: 2rem;   
     margin-bottom: 2rem;
     max-width: 100%;
@@ -175,14 +176,15 @@ main{
     justify-self: center;
 }
 
-.contenedor>h2{
+.contenedor>h2, 
+.contenedor-talentos>h2{
     display: inline-block;
     width: 100%;
     font-size: clamp(var(--h2-section-min), var(--h2-section-ideal), var(--h2-section-max));
 
 }
 
-.tarjeta-precio, article{
+.tarjeta-precio, .noticia{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,26 +200,26 @@ main{
 
 }
 
-article{
+.noticia{
     flex: 1 1 20%;
     min-width: 50vw;
 }
 
 .tarjeta-precio figure, 
-article figure{
+.noticia figure{
     flex: 1 1 10%;
     display: flex;
     align-items: center;
 }
 
 .tarjeta-precio figure>img,
-article figure>img{
+.noticia figure>img{
     width: 100%;
     object-fit: contain;
     box-shadow: 2px 1px 4px var(--font-color3);
 }
 
-.tarjeta-precio>div button, .contenedor>article button{
+.tarjeta-precio>div button, .contenedor>.noticia button{
     text-align: center;
     width: 70%;
     border-radius: 1rem;
@@ -228,12 +230,12 @@ article figure>img{
     justify-self: flex-end;
 }
 
-.contenedor>article button{
+.contenedor>.noticia button{
     width: 100%;
 }
 
 .tarjeta-precio>div button:hover,
-.contenedor>article button:hover{
+.contenedor>.noticia button:hover{
     cursor: pointer;
     background-color: var(--bg-color3);
     color: var(--font-precio);
@@ -255,13 +257,8 @@ article figure>img{
     z-index: 100;
 }
 
-#banner-coleccionistas img{
-    margin-top: 5rem;
-    justify-self: center;
-    max-width: 100%;
-}
 
-article p{
+.noticia p{
     color: var(--font-precio);
 }
 
@@ -293,17 +290,17 @@ section h3{
     align-items: center;
 }
 
-div figure img{
+.catalogo div figure img{
     width: 100%;
     height: 100%;
 }
 
-div figcaption{
+.catalogo div figcaption{
     color: var(--font-color2);
     font-weight: bolder;
 }
 
-section div p{
+.catalogo section div p{
     color: var(--font-precio);
     font-family: var(--font-text);
     margin-bottom: 0.2rem;
@@ -348,20 +345,64 @@ fieldset button:hover{
     background-color: var(--font-color2);
 }
 
+/*TALENTOS*/
+
+.talento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    color: var(--border-color);
+}
+
+.contenedor-talentos{
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.talento>figure{
+    min-width: 10%;
+    flex: 1 0 30%;
+}
+.talento>figure img{
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.talento>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.talento>h2{
+    display: none;
+}
+
+.talento>div p{
+    font-size: var(--p-min), var(--p-ideal), var(--p-max);
+}
+
+
+
 /*FOOTER*/
 footer{
     color: var(--font-precio);
-    background-color: var(--bg-color);
+    background-color: #373636;
     grid-area: footer;
     display: flex;
-    
+    align-items: center;
     align-content: space-evenly;
     justify-content: center;
     margin-top: 1rem;
 }
 
 
-footer img{
+footer>figure img{
     border-radius: 60px;
     width: 80%;
     height: 45%;
@@ -379,7 +420,7 @@ footer img{
         width: 80%;
     }
 
-    article{
+    .noticia{
         flex: 1 1 25%;
         min-width: 30vw;
     }
@@ -392,29 +433,63 @@ footer img{
         gap: 0.5rem;
         flex: 1 1 30%;
         min-width: 20vw;
-}
+    }
+    .talento{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        color: var(--border-color);
+        }
+
+    .contenedor-talentos{
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .talento>figure{
+        min-width: 10%;
+        flex: 1 0 25%;
+    }
+    .talento>figure img{
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .talento>div{
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+    }
+
+    .talento>h2{
+        display: none;
+    }
+
 }
 
 
 /*MEDIA-Q DESKTOP*/
 @media(min-width: 1024px){
-    .contenedor{
+    .contenedor, .contenedor-talentos{
         max-width: 95%;
         gap: 2vw;
-        margin-top: 5rem;   
-        margin-bottom: 10rem;
+        margin-top: 3rem;   
+        margin-bottom: 3rem;
     }
 
-
-
-    .tarjeta-precio, article{
+    .tarjeta-precio, .noticia{
         max-width: 30%;
         flex: 1 1 10%;
         margin-bottom: 3rem;
         min-width: 10vw;
     }
 
-    article{
+    .noticia{
         max-width: 30%;
         flex: 1 1 25%;
         margin-bottom: 3rem;
@@ -439,7 +514,8 @@ footer img{
         justify-content: flex-start;
     }
 
-    .contenedor>h2{
+    .contenedor>h2, 
+    .contenedor-talentos>h2{
         display: inline-block;
         width: 100%;
 
@@ -472,4 +548,41 @@ footer img{
     main{
         width: 70%;
     }
+
+    .talento{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        color: var(--border-color);
+        }
+
+    .contenedor-talentos{
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .talento>figure{
+        min-width: 10%;
+        flex: 1 0 20%;
+    }
+    .talento>figure img{
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .talento>div{
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+    }
+
+    .talento>h2{
+        display: none;
+    }
+
 }
