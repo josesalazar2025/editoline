@@ -6,20 +6,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    top:0;
 }
 
 :root {
+    font-size: 16px;
     scroll-behavior: smooth;
     height: 100%;
-    --font-text: "Arial", sans-serif;
-    --font-family: "Vina Sans", sans-serif;
+    --font-text: "Roboto", sans-serif;
+    --font-titular: "Vina Sans", sans-serif;
     --bg-color: #262626;
     --bg-color2: rgb(127, 255, 212);
     --bg-color3: rgb(16, 141, 108);
+    --border-color: rgba(139, 139, 139, 0.758);
     --font-color: #a32c2c;
     --font-color2:  #d7ac61;
     --font-color3: #cf4141;
-    --font-precio: #eee;
+    --font-precio: rgba(187, 185, 185, 0.913);
+
+    --h1-min: 2rem;
+    --h1-ideal: 1.147rem + 3.210vw;
+    --h1-max: 5rem;
+
+    --nav-title-min: 2rem;
+    --nav-title-ideal: 1.858rem + 0.535vw;
+    --nav-title-max: 2.5rem;
+
+    --h2-section-min: 1.4rem;
+    --h2-section-ideal: 1.229rem + 0.642vw;
+    --h2-section-max: 2rem;
+
+    --p-min: 1rem;
+    --p-ideal: 0.964rem + 0.134vw;
+    --p-max: 1.125rem;
 }
 
 
@@ -40,7 +59,6 @@ body {
         "footer";
 }
 
-
 /*NAVEGADOR PRINCIPAL*/
 nav{
     text-transform: uppercase;
@@ -52,21 +70,25 @@ nav{
     top: 0;
     display: flex;
     flex-direction: row;
-    width: 70%;
-    justify-self: center;   
-    border-radius: 1rem;
+    width: 100%;
+    justify-self: center;
+    margin-top: 0;
+    z-index: 1000;
+
 }
 
 nav>p{
-    font-size: 2.5rem;
-    padding-left: 2rem;
+    font-size: clamp(var(--nav-title-min), var(--nav-title-ideal), var(--nav-title-max));
+    padding-left: 1.2rem;
     font-weight: 100;
-    width: 50%;
+    width: 100%;
     color: var(--font-color);
-    font-family: var(var(--font-family));
+    font-family: var(--font-titular);
+    justify-self: center;
 }
 
 nav>ul{
+    display: none;
     justify-self: right;
     width: 100%;
 
@@ -78,53 +100,62 @@ ul li{
 }
 
 li a{
+    font-size: 0.8rem;
     text-decoration: none;
     color: var(--font-color2);
     font-weight: 600;
 }
 
-a:hover{
+nav li a:hover{
     color: var(--font-color3);
     cursor: pointer;
 }
 
+nav li a[aria-current="page"]{                                               
+    color: var(--font-color3);                                                                             
+  }      
+
 header{
     background-image: url(../img/banner.jpg);
     background-size: cover;
-    background-position:center bottom;
+    background-position: center bottom;
     background-color:var(--bg-color);
     grid-area: header;
     display: grid;
 }
 
 h1{
-    font-family: var(--font-family);
+    font-family: var(--font-titular);
     color:var(--font-color3);
-    font-size: 6rem;
+    font-size: clamp(var(--h1-min), var(--h1-ideal), var(--h1-max));
     justify-self: flex-end;
     align-self: flex-end;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
     font-weight: 100;
 }
+
+nav span.material-symbols-outlined{
+    font-size: 2.5em;
+    padding-right: 1rem;
+    color: var(--font-color);
+}
+
 
 h2{
     font-weight: 100;
-    font-family: var(--font-family);
+    font-family: var(--font-titular);
     color: var(--font-color2);
-    font-size: 2rem;
 }
-
 
 /*MAIN*/
 main{
     display: grid;
     grid-area: main;
-    width: 70%;
+    width: 90%;
     justify-self: center;
     overflow: hidden;
 }
-
 
 /* TOP SELLERS / COLLECTORS*/
 #contenedor-top-sellers,
@@ -143,6 +174,7 @@ main{
 #contenedor-collector-items>h2{
     display: inline-block;
     width: 100%;
+    font-size: clamp(var(--h2-section-min), var(--h2-section-ideal), var(--h2-section-max));
 
 }
 
@@ -157,29 +189,45 @@ main{
     display: flex;
     align-items: center;
     gap: 1.5rem;
+
+}
+
+
+.tarjeta-precio figure {
+    flex: 1 1 10%;
+    display: flex;
+    align-items: center;
+}
+
+.tarjeta-precio figure>img{
+    width: 100%;
+    object-fit: contain;
+
 }
 
 .tarjeta-precio>div button{
     text-align: center;
-    width: 60%;
-    justify-self: center;
+    width: 70%;
     border-radius: 1rem;
     background-color: transparent;
     padding: 0.5rem;
-    border: 1px solid var(--font-precio);
+    border: 1px solid var(--border-color);
     color: var(--font-precio);
+    justify-self: flex-end;
 }
 
 .tarjeta-precio>div button:hover{
     cursor: pointer;
     background-color: var(--bg-color3);
-    color:var(--font-precio);
+    color: var(--font-precio);
     transition: ease 0.4s;
 }
 
 .tarjeta-precio>div p{
+    justify-self: flex-start;
     color: var(--font-precio);
-    font-weight: 900;
+    font-weight: 500;
+    font-size: 0.8rem;
 }
 
 .tarjeta-precio h2{
@@ -244,7 +292,24 @@ footer img{
     border-radius: 60px;
 }
 
-/*MEDIA QUERIES*/
+/*MEDIA-Q TABLET*/
+
+@media(min-width: 768px){
+    #contenedor-top-sellers,
+    #contenedor-collector-items{
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 768px){
+    #contenedor-top-sellers,
+    #contenedor-collector-items{
+        flex-direction: row;
+    }
+}
+
+/*MEDIA-Q DESKTOP*/
+
 @media(min-width: 1024px){
     #contenedor-top-sellers,
     #contenedor-collector-items{
@@ -254,13 +319,60 @@ footer img{
         margin-bottom: 10rem;
     }
 
-   
-}
+    .tarjeta-precio{
+        flex: 1 1 15%;
+        margin-bottom: 3rem;
+    }
 
+    nav{
+        width: 70%;
+        border-radius: 0% 0% 0.5rem 0.5rem;
 
-@media(min-width: 768px){
-    #contenedor-top-sellers,
-    #contenedor-collector-items{
+    }
+
+    nav span.material-symbols-outlined{
+        display: none;
+    }
+
+    nav>ul{
+        display: flex;
         flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    #contenedor-top-sellers>h2,
+    #contenedor-collector-items>h2{
+        display: inline-block;
+        width: 100%;
+
+    }
+
+
+    nav>p{
+        padding-left: 2rem;
+        font-weight: 100;
+        width: 50%;
+        color: var(--font-color);
+        font-family: var(--font-titular);
+    }
+    h1{
+        font-family: var(--font-titular);
+        color:var(--font-color3);
+        justify-self: flex-end;
+        align-self: flex-end;
+        padding-right: 2rem;
+        padding-bottom: 0.2rem;
+        font-weight: 100;
+    }
+
+    header{
+        background-image: url(../img/banner.jpg);
+        background-size: cover;
+        background-position: center bottom;
+    }
+
+    main{
+        width: 70%;
     }
 }
+
