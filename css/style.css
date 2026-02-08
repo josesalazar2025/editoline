@@ -11,15 +11,16 @@
 :root {
     scroll-behavior: smooth;
     height: 100%;
-    --font-text: "Arial", sans-serif;
-    --font-family: "Vina Sans", sans-serif;
+    --font-text: "Roboto", sans-serif;
+    --font-titular: "Vina Sans", sans-serif;
     --bg-color: #262626;
     --bg-color2: rgb(127, 255, 212);
     --bg-color3: rgb(16, 141, 108);
+    --border-color: rgba(139, 139, 139, 0.758);
     --font-color: #a32c2c;
     --font-color2:  #d7ac61;
     --font-color3: #cf4141;
-    --font-precio: #eee;
+    --font-precio: rgba(187, 185, 185, 0.913);
 }
 
 
@@ -52,21 +53,21 @@ nav{
     top: 0;
     display: flex;
     flex-direction: row;
-    width: 70%;
+    width: 100%;
     justify-self: center;   
-    border-radius: 1rem;
 }
 
 nav>p{
-    font-size: 2.5rem;
-    padding-left: 2rem;
+    font-size: 2rem;
+    padding-left: 1rem;
     font-weight: 100;
-    width: 50%;
+    width: 100%;
     color: var(--font-color);
-    font-family: var(var(--font-family));
+    font-family: var(--font-titular);
 }
 
 nav>ul{
+    display: none;
     justify-self: right;
     width: 100%;
 
@@ -91,26 +92,32 @@ a:hover{
 header{
     background-image: url(../img/banner.jpg);
     background-size: cover;
-    background-position:center bottom;
+    background-position: center bottom;
     background-color:var(--bg-color);
     grid-area: header;
     display: grid;
 }
 
 h1{
-    font-family: var(--font-family);
+    font-family: var(--font-titular);
     color:var(--font-color3);
-    font-size: 6rem;
+    font-size: 2rem;
     justify-self: flex-end;
     align-self: flex-end;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
     font-weight: 100;
 }
 
+nav span.material-symbols-outlined{
+    font-size: 2.5em;
+    color: var(--font-color);
+}
+
+
 h2{
     font-weight: 100;
-    font-family: var(--font-family);
+    font-family: var(--font-titular);
     color: var(--font-color2);
     font-size: 2rem;
 }
@@ -120,7 +127,7 @@ h2{
 main{
     display: grid;
     grid-area: main;
-    width: 70%;
+    width: 90%;
     justify-self: center;
     overflow: hidden;
 }
@@ -161,23 +168,24 @@ main{
 
 .tarjeta-precio>div button{
     text-align: center;
-    width: 60%;
-    justify-self: center;
+    width: 70%;
     border-radius: 1rem;
     background-color: transparent;
     padding: 0.5rem;
-    border: 1px solid var(--font-precio);
+    border: 1px solid var(--border-color);
     color: var(--font-precio);
+    justify-self: flex-end;
 }
 
 .tarjeta-precio>div button:hover{
     cursor: pointer;
     background-color: var(--bg-color3);
-    color:var(--font-precio);
+    color: var(--font-precio);
     transition: ease 0.4s;
 }
 
 .tarjeta-precio>div p{
+    justify-self: flex-start;
     color: var(--font-precio);
     font-weight: 900;
 }
@@ -239,7 +247,24 @@ footer img{
     border-radius: 60px;
 }
 
-/*MEDIA QUERIES*/
+/*MEDIA-Q TABLET*/
+
+@media(min-width: 768px){
+    #contenedor-top-sellers,
+    #contenedor-collector-items{
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 768px){
+    #contenedor-top-sellers,
+    #contenedor-collector-items{
+        flex-direction: row;
+    }
+}
+
+/*MEDIA-Q DESKTOP*/
+
 @media(min-width: 1024px){
     #contenedor-top-sellers,
     #contenedor-collector-items{
@@ -249,13 +274,50 @@ footer img{
         margin-bottom: 10rem;
     }
 
-   
-}
+    .tarjeta-precio{
+        margin-bottom: 3rem;
+    }
 
+    nav{
+        width: 70%;
+        border-radius: 0% 0% 0.5rem 0.5rem;
+    }
 
-@media(min-width: 768px){
-    #contenedor-top-sellers,
-    #contenedor-collector-items{
-        flex-direction: row;
+    nav span.material-symbols-outlined{
+        display: none;
+    }
+
+    nav>ul{
+        display: inline;
+    }
+
+    nav>p{
+        font-size: 2.5rem;
+        padding-left: 2rem;
+        font-weight: 100;
+        width: 50%;
+        color: var(--font-color);
+        font-family: var(--font-titular);
+    }
+    h1{
+        font-family: var(--font-titular);
+        color:var(--font-color3);
+        font-size: 5rem;
+        justify-self: flex-end;
+        align-self: flex-end;
+        padding-right: 2rem;
+        padding-bottom: 0.2rem;
+        font-weight: 100;
+    }
+
+    header{
+        background-image: url(../img/banner.jpg);
+        background-size: cover;
+        background-position: center bottom;
+    }
+
+    main{
+        width: 70%;
     }
 }
+
