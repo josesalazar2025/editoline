@@ -147,6 +147,7 @@ nav span.material-symbols-outlined{
 h2{
     /* text-shadow: 0.5px 0.5px 8px var(--font-color3); */
     font-weight: 100;
+    letter-spacing: 0.1rem;
     font-family: var(--font-titular2);
     color: var(--font-color2);
     margin-bottom: 1rem;
@@ -154,8 +155,7 @@ h2{
     margin-bottom: 1rem;
     text-justify: auto;
     font-weight: 700;
-    
-
+    font-size: clamp(var(--h2-section-min), var(--h2-section-ideal), var(--h2-section-max));
 }
 
 
@@ -179,6 +179,16 @@ main{
     overflow: hidden;
 }
 
+#intro{
+    display: flex;
+    flex-direction: column;
+    color: var(--border-color);
+}
+
+#intro >p{
+    padding-bottom: 1rem;
+}
+
 
 /* TOP SELLERS / COLLECTORS*/
 .contenedor, 
@@ -196,8 +206,6 @@ main{
 .contenedor-talentos>h2{
     display: inline-block;
     width: 100%;
-    font-size: clamp(var(--h2-section-min), var(--h2-section-ideal), var(--h2-section-max));
-
 }
 
 .tarjeta-precio, .noticia{
@@ -213,7 +221,6 @@ main{
     display: flex;
     align-items: center;
     gap: 1.5rem;
-
 }
 
 .noticia{
@@ -240,7 +247,7 @@ main{
     cursor: pointer;
 }
 
-.tarjeta-precio>div button, .contenedor>.noticia button{
+.tarjeta-precio>div button, .contenedor>.noticia button, #intro>button{
     text-align: center;
     width: 70%;
     border-radius: 1rem;
@@ -251,12 +258,19 @@ main{
     justify-self: flex-end;
 }
 
+
+#intro>button{
+    width: 20%;
+    align-self: flex-end;
+
+}
 .contenedor>.noticia button{
     width: 100%;
 }
 
 .tarjeta-precio>div button:hover,
-.contenedor>.noticia button:hover{
+.contenedor>.noticia button:hover,
+#intro>button:hover{
     cursor: pointer;
     background-color: var(--bg-color3);
     color: var(--font-precio);
