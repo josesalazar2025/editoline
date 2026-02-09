@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Vina+Sans&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="css/style.css">
+    <!-- Mis estilos -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Menú de navegación -->
@@ -20,22 +21,24 @@
         <span class="material-symbols-outlined">menu</span>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="catalogo.html">Cátalogo</a></li>
             <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="talent.html">Talentos</a></li>
+            <li><a href="talent.html">Nuevos Talentos</a></li>
             <li><a href="#" aria-current="page">Contacto</a></li>
         </ul>
     </nav>
-     <!-- Cabecera -->
+
+    <!-- Cabecera -->
     <header>
-        <h1>EDITOR'S PICK</h1>
+        <h1>EDITOLINE</h1>
     </header>
+
     <!-- CONTENIDO PRINCIPAL -->
-    <main>
+    <main class="contacto">
         <!-- Formulario de contacto -->
         <section>
         <h2>CONTACTA CON NOSOTROS</h2>
-        <p>Puedes enviarnos tu consulta rellenando todos los campos. Contactaremos contigo lo antes posible</p>
+        <p>Puedes enviarnos tu consulta rellenando todos los campos. Contactaremos contigo lo antes posible.</p>
         <form action="#" method="post" name="formulario-contacto" id="formulario-contacto" enctype="multipart/form-data">
             <fieldset>
                 <ul>
@@ -51,13 +54,12 @@
                         <label for="main">E-Mail</label>
                         <input type="email" name="correo" id="correo" placeholder="ejemplo@ejemplo.com">
                     </li>
-                     <label for="info">Mensaje</label>
-                     <textarea name="info" id="info" cols="80" rows="10"></textarea>
-                    <li></li>
                     <li>
-                        <button type="submit">Enviar formulario</button>
+                    <label for="info">Mensaje</label>
+                    <textarea name="info" id="info" cols="80" rows="10"></textarea>
                     </li>
                 </ul>
+                    <button type="submit">Enviar formulario</button>
             </fieldset>
         </form>
         </section>
