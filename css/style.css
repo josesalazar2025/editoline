@@ -14,8 +14,8 @@
     scroll-behavior: smooth;
     height: 100%;
     --font-text: "Roboto", sans-serif;
-    --font-titular: "New Amsterdam", sans-serif;
-    --font-titular2: "Rubik, sans-serif";
+    --font-titular: "Vina Sans", sans-serif;
+    --font-titular2: "New Amsterdam", sans-serif;
     --bg-color: #262626;
     --bg-color2: rgb(127, 255, 212);
     --bg-color3: rgb(16, 141, 108);
@@ -147,7 +147,7 @@ nav span.material-symbols-outlined{
 h2{
     /* text-shadow: 0.5px 0.5px 8px var(--font-color3); */
     font-weight: 100;
-    font-family: var(--font-titular);
+    font-family: var(--font-titular2);
     color: var(--font-color2);
     margin-bottom: 1rem;
     text-justify: auto;
@@ -161,7 +161,7 @@ h2{
 
 h3{
     color: var(--font-color2);
-    font-family: var(--font-titular);
+    font-family: var(--font-titular2);
     text-transform: uppercase;
     border-bottom: 2px solid var(--font-color2);
     margin-bottom: 0.8rem;
