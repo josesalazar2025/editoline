@@ -215,6 +215,7 @@ main{
     width: 90%;
     justify-self: center;
     overflow: hidden;
+    margin-bottom: 4rem;
 }
 
 #intro{
@@ -227,6 +228,7 @@ main{
 
 #intro >p{
     padding-bottom: 1rem;
+    
 }
 
 
@@ -302,7 +304,7 @@ main{
 
 
 #intro>button{
-    margin-right: 2rem;
+    margin-right: 0.5rem;
     width: 35%;
     align-self: flex-end;
 
@@ -660,7 +662,7 @@ footer>p{
     }
 
     .tarjeta-revista{
-        min-width: 245px;
+        min-width: 200px;
     }
 
 
