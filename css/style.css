@@ -118,23 +118,54 @@ nav li a[aria-current="page"]{
 }      
 
 header{
-    background-image: url(../img/banner.jpg);
-    background-size: cover;
-    background-position: center bottom;
     background-color:var(--bg-color);
     grid-area: header;
+    position: relative;
+    overflow: hidden;
     display: grid;
+}
+
+.header-slider{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: 100%;
+    scrollbar-color: var(--font-color) var(--bg-color);
+}
+
+.header-slider::-webkit-scrollbar{
+    height: 8px;
+}
+
+.header-slider::-webkit-scrollbar-track{
+    background: var(--bg-color);
+}
+
+.header-slider::-webkit-scrollbar-thumb{
+    background: var(--font-color);
+    border-radius: 4px;
+}
+
+.header-slider img{
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    scroll-snap-align: start;
 }
 
 h1{
     font-family: var(--font-titular);
     color:var(--font-color3);
     font-size: clamp(var(--h1-min), var(--h1-ideal), var(--h1-max));
-    justify-self: flex-end;
-    align-self: flex-end;
-    padding-bottom: 0.5rem;
+    position: absolute;
+    padding-bottom: 1rem;
     padding-right: 0.5rem;
     font-weight: 100;
+    pointer-events: none;
+    align-self: flex-end;
 }
 
 nav span.material-symbols-outlined{
@@ -645,17 +676,9 @@ footer>p{
     h1{
         font-family: var(--font-titular);
         color:var(--font-color3);
-        justify-self: flex-end;
-        align-self: flex-end;
-        padding-right: 2rem;
-        padding-bottom: 0.2rem;
+        right: 2rem;
+        bottom: 0.2rem;
         font-weight: 100;
-    }
-
-    header{
-        background-image: url(../img/banner.jpg);
-        background-size: cover;
-        background-position: center bottom;
     }
 
     main{
