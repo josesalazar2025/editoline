@@ -9,7 +9,7 @@
     top:0;
 }
 
-:root {
+:root{
     font-size: 16px;
     scroll-behavior: smooth;
     height: 100%;
@@ -45,10 +45,10 @@
     --p-min: 1rem;
     --p-ideal: 0.964rem + 0.134vw;
     --p-max: 1.125rem;
-}
+    }
 
 
-body {
+body{
     width: 100%;
     min-height: 100vh;
     font-family: var(--font-text);
@@ -185,8 +185,10 @@ small{
 
 p{
     font-size: var(--p-min), var(--p-ideal), var(--p-max);
+    color: var(--font-precio);
 
 }
+
 h2{
     /* text-shadow: 0.5px 0.5px 8px var(--font-color3); */
     font-weight: 100;
@@ -222,11 +224,7 @@ main{
     width: 90%;
     justify-self: center;
     overflow: hidden;
-    margin-bottom: 4rem;
-}
-
-main p {
-    color: var(--font-precio);
+    margin-bottom: 2.5rem;
 }
 
 #intro{
@@ -402,9 +400,7 @@ main p {
 }
 
 
-.catalogo section div p{
-    color: var(--font-precio);
-    font-family: var(--font-text);
+.catalogo section div p{ 
     margin-bottom: 0.2rem;
     text-align: left;
     padding-left: 0.5rem;
@@ -414,15 +410,6 @@ main p {
 .catalogo section div button{
     width:48%;
 }
-
-/* .catalogo section div button{
-    color: var(--font-color2);
-    background-color: transparent;
-    font-weight: bold;
-    border: none;
-    margin-bottom: 0.4rem;
-    padding-left: 0.5rem;
-} */
 
 
 /* CONTACTO FORM /INPUTS */
