@@ -23,7 +23,7 @@
     --font-color: #ca3737;
     --font-color2:  #f7c973;
     --font-color3: #e64949;
-    --font-precio: rgba(219, 214, 214, 0.913);
+    --font-precio: rgba(226, 226, 226, 0.913);
 
     --h1-min: 2rem;
     --h1-ideal: 1.147rem + 3.210vw;
@@ -31,12 +31,17 @@
 
     --nav-title-min: 2rem;
     --nav-title-ideal: 1.858rem + 0.535vw;
-    --nav-title-max: 2.5rem;
+    --nav-title-max: 2.8rem;
 
     --h2-section-min: 1.4rem;
     --h2-section-ideal: 1.229rem + 0.642vw;
     --h2-section-max: 2rem;
 
+    --h3-section-min: 1.2rem;
+    --h3-section-ideal: 1.229rem + 0.535vw;
+    --h3-section-max: 1.6rem;
+
+    
     --p-min: 1rem;
     --p-ideal: 0.964rem + 0.134vw;
     --p-max: 1.125rem;
@@ -200,6 +205,8 @@ h2{
 h3{
     color: var(--font-color2);
     font-family: var(--font-titular2);
+    font-size: clamp(var(--h3-min), var(--h3-ideal), var(--h3-max));
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     border-bottom: 2px solid var(--font-color2);
     margin-bottom: 0.8rem;
@@ -216,6 +223,10 @@ main{
     justify-self: center;
     overflow: hidden;
     margin-bottom: 4rem;
+}
+
+main p {
+    color: var(--font-precio);
 }
 
 #intro{
@@ -423,10 +434,14 @@ img:hover {
     font-weight: bold;
 }
 
+form{
+    width: 90%;
+}
+
+
 fieldset{
     border: none;
     text-transform: uppercase;
-    
 }
 
 label{
@@ -453,6 +468,7 @@ input,textarea{
 
 textarea{
     border-left: 1px solid var(--font-precio);
+    
 }
 
 fieldset button{
