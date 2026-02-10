@@ -390,11 +390,12 @@ main{
 
 
 /* CONTACTO FORM /INPUTS */
+
 .contacto section:first-child{
     margin-bottom: 1.2rem;
 }
 
-.contacto iframe{
+.contacto section:last-child{
     width: 100%;
 }
 
@@ -404,13 +405,14 @@ main{
 }
 
 form{
-    width: 90%;
+    width: 80%;
 }
 
 
 fieldset{
     border: none;
     text-transform: uppercase;
+
 }
 
 label{
@@ -457,7 +459,7 @@ fieldset button:hover{
     background-color: var(--bg-color3);
 }
 
-.contacto section:last-child div{
+.contacto address{
     border-left: 2px solid var(--font-color2);
     padding-left: 0.4rem;
 }
@@ -641,6 +643,9 @@ footer>p{
         display: none;
     }
 
+    form{
+    width: 100%;
+    }
 }
 
 
@@ -767,5 +772,14 @@ footer>p{
     main{
         margin-bottom: 10rem;
     }
+
+    fieldset{
+    width: 100%
+
+    }
+
+    iframe{
+    width: 100%;
+}
 }
 
