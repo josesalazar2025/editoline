@@ -304,7 +304,19 @@ main p {
 .noticia figure>img{
     width: 100%;
     object-fit: contain;
+    
 }
+
+/*FILTROS PARA IMAGENES-HACER PRUEBAS, NO ME CONVENCEN TANTO*/
+
+/* .tarjeta-revista figure>img {
+  filter: sepia(10%) saturate(100%) hue-rotate(-60deg);
+  transition: filter 0.4s ease;
+}
+
+.tarjeta-revista figure>img:hover {
+  filter: none;
+} */
 
 .tarjeta-revista figure>img:hover,
 .noticia figure>img:hover{
