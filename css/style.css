@@ -161,11 +161,11 @@ h1{
     color:var(--font-color3);
     font-size: clamp(var(--h1-min), var(--h1-ideal), var(--h1-max));
     position: absolute;
-    padding-bottom: 1rem;
-    padding-right: 0.5rem;
     font-weight: 100;
-    pointer-events: none;
     align-self: flex-end;
+    right: 1rem;
+    bottom: 0.5rem;
+    font-weight: 100;
 }
 
 nav span.material-symbols-outlined{
@@ -378,7 +378,7 @@ main{
 }
 
 .catalogo section div button{
-    width:100%;
+    width:48%;
 }
 
 /* .catalogo section div button{
