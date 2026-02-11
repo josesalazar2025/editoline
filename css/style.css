@@ -24,7 +24,7 @@
     --font-color2:  #f7c973;
     --font-color3: #e64949;
     --font-gris: rgb(150, 148, 148);
-    --font-gris-claro: rgb(185, 183, 183);
+    --font-gris-claro: rgb(186, 186, 186);
 
     --h1-min: 2rem;
     --h1-ideal: 1.400rem + 3.000vw;
@@ -322,6 +322,7 @@ main{
 .tarjeta-revista figure>img{
     width: 100%;
     object-fit: contain;
+    transition: box-shadow 1s ease-in-out;
 }
 
 .noticia figure>img{
@@ -329,6 +330,7 @@ main{
     object-fit: cover;
     aspect-ratio: 16/9;
     object-position: center top;
+    transition: box-shadow 1s ease-in-out;
 }
 
 main figure>img{
@@ -349,7 +351,6 @@ main figure>img{
 .tarjeta-revista figure>img:hover,
 .noticia figure>img:hover{
     box-shadow: 1px 1px 20px 2px var(--font-color3);
-    transition: ease 0.7s;
     cursor: pointer;
 }
 
@@ -362,6 +363,7 @@ main figure>img{
     border: 1px solid var(--border-color);
     color: var(--font-gris);
     justify-self: flex-end;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 #intro>button{
@@ -380,7 +382,6 @@ main figure>img{
     cursor: pointer;
     background-color: var(--bg-color3);
     color: rgb(215, 212, 212);
-    transition: ease 0.4s;
 }
 
 .tarjeta-revista>div p{
@@ -501,6 +502,7 @@ fieldset button{
     padding-left: 0;
     font-weight: bolder;
     text-transform: uppercase;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 fieldset button:hover{
