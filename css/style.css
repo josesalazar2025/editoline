@@ -867,13 +867,22 @@ footer>p{
         margin-bottom: 10rem;
     }
 
-    fieldset{
+    /* fieldset{
     width: 100%
 
     }
 
     iframe{
     width: 100%;
+} */
+
+    .contacto section:first-child{
+
+    width: 45%;
 }
+
+    .contacto section:last-child{
+    width: 45%;
+    }
 }
 
