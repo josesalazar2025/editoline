@@ -171,10 +171,28 @@ h1{
     align-self: flex-end;
 }
 
-nav span.material-symbols-outlined{
+#menu-toggle{
+    display: none;
+}
+
+nav label.material-symbols-outlined{
     font-size: 2.5em;
     padding-right: 1rem;
     color: var(--font-color);
+    cursor: pointer;
+}
+
+#menu-toggle:checked ~ ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem 0;
+    gap: 1rem;
+    text-align: center;
 }
 
 small{
@@ -738,7 +756,7 @@ footer>p{
 
     }
 
-    nav span.material-symbols-outlined{
+    nav label.material-symbols-outlined{
         display: none;
     }
 
