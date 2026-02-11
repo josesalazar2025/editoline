@@ -536,57 +536,41 @@ footer{
     color: var(--font-precio);
     background-color: #373636;
     grid-area: footer;
-    display: flex;
+    display: grid;
+    justify-items: center;
     align-content: center;
-    justify-content: center;
     margin-top: 1rem;
-    flex-direction: column;
     gap: 3rem;
 }
 
 #contenedor-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
     gap: 4rem;
-    
-}
-footer ul>li{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-
-}
-
-footer ul>li a{
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    align-self: flex-start;
-    color: var(--border-color);
 }
 
 #contenedor-footer>h2{
-    align-self: center;
     color: var(--font-color);
     font-family: var(--font-titular);
-    
-}
-#contenedor-footer>div{
-    display: flex;
-    flex-direction: column ;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
 #contenedor-footer>div h3{
     margin: 0;
     text-decoration: none;
-    border: none
+    border: none;
+}
+
+footer ul>li a{
+    display: block;
+    color: var(--border-color);
+}
+
+footer ul>li a:hover{
+    color: var(--font-color);
 }
 
 footer>p{
-    align-self: center;
     font-size: 0.7rem;
     color: var(--border-color);
 }
@@ -743,6 +727,11 @@ footer>p{
 
     #intro>button{
         width: 20%;
+    }
+
+    #intro>p{
+        padding-bottom: 1.5rem;
+        line-height: 1.5rem;
     }
 
     main{
