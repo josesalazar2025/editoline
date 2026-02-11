@@ -160,6 +160,11 @@ header{
     scroll-snap-align: start;
 }
 
+.header-slider img:last-child{
+    object-position: 70%;
+
+}
+
 h1{
     font-family: var(--font-titular);
     color:var(--font-color3);
@@ -476,8 +481,8 @@ button:hover{
 }
 
 
-/* CONTACTO FORM /INPUTS */
 
+/* CONTACTO FORM /INPUTS */
 .contacto section:first-child{
     margin-bottom: 1.2rem;
 }
