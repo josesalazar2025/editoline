@@ -176,9 +176,7 @@ header{
 
 #ray{
     object-position: 63%;
-
 }
-
 
 h1{
     font-family: var(--font-titular);
@@ -201,6 +199,8 @@ nav label.material-symbols-outlined{
     color: var(--font-color);
     cursor: pointer;
 }
+
+/*MENÚ HAMBURGUESA OCULTO*/
 
 #menu-toggle:checked ~ ul{
     display: flex;
@@ -242,7 +242,6 @@ h2{
     border-bottom: 2px solid #f7c973a9;
 }
 
-
 h3{
     color: var(--font-gris-claro);
     font-family: var(--font-titular2);
@@ -253,13 +252,11 @@ h3{
     margin-top: 0.8rem;
 }
 
-/* Añado selector para el boton "Enviar publicacion" del main */
 button a{
     color: var(--font-gris-claro);
     text-decoration: none;
     font-weight: bold;
 }
-
 
 /*MAIN*/
 main{
@@ -278,26 +275,32 @@ main{
     color: var(--border-color);
 }
 
-#intro>h2, footer>h2{
+#intro>h2, 
+footer>h2{
     border-bottom: none;
 }
 #intro >p{
     color: var(--font-gris-claro);
     padding-bottom: 1rem;
-    
 }
 
 
 /* TOP SELLERS / COLLECTORS / NOTICIAS*/
-.contenedor, 
-.contenedor-talentos{
-    margin-top: 2.5rem;   
+.contenedor,
+.contenedor-talentos,
+.contenedor-contacto{
+    margin-top: 2.5rem;
     max-width: 90%;
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: space-around;
     justify-self: center;
+}
+
+.contenedor-contacto{
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .contenedor>h2, 
@@ -312,6 +315,12 @@ main{
     justify-content: center;
     gap: 0.5rem;
     flex: 1 1 40%;
+    background-color: #313131;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.tarjeta-revista2{
     background-color: #313131;
     padding: 0.5rem;
     border-radius: 1rem;
@@ -352,6 +361,7 @@ main{
 }
 
 .tarjeta-revista figure,
+.tarjeta-revista2 figure
 .noticia figure{
     flex: 1 1 10%;
     display: flex;
@@ -382,7 +392,8 @@ main{
 
 
 
-.tarjeta-revista figure>img{
+.tarjeta-revista figure>img,
+.tarjeta-revista2 figure>img{
     width: 100%;
     object-fit: contain;
     transition: box-shadow 1s ease-in-out;
@@ -408,6 +419,7 @@ main figure>img{
 }
 
 .tarjeta-revista figure>img:hover,
+.tarjeta-revista2 figure>img:hover,
 .noticia figure>img:hover{
     box-shadow: 1px 1px 20px 2px var(--font-color3);
 }
@@ -437,7 +449,8 @@ main figure>img{
     transform: scale(1.15);
 }
 
-button, .boton-enlace{
+button, 
+.boton-enlace{
     text-align: center;
     width: 70%;
     border-radius: 0.5rem;
@@ -461,7 +474,8 @@ button, .boton-enlace{
     width: 100%;
 }
 
-button:hover, .boton-enlace:hover{
+button:hover, 
+.boton-enlace:hover{
     cursor: pointer;
     background-color: var(--bg-color2);
     color: var(--font-gris-claro);
@@ -474,20 +488,22 @@ button:hover, .boton-enlace:hover{
     font-size: 0.9rem;
 }
 
-.tarjeta-revista h3, .tarjeta-revista h2{
+.tarjeta-revista h3, 
+.tarjeta-revista2 h2, 
+.contenedor-contacto>h2{
     display: none;
 }
 
 
 /* CATALOGO */
-.catalogo h3{
+.tarjeta-revista2 h3{
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
 
-.catalogo section div {
+.tarjeta-revista2 div {
     display: block;
     object-fit: contain;
     margin-top: 1.5rem;
@@ -495,12 +511,12 @@ button:hover, .boton-enlace:hover{
 
 }
 
-.catalogo section div:nth-child(odd){
+.tarjeta-revista2 div:nth-child(odd){
     border-left: 2px solid var(--font-color2);
 }
 
 
-.catalogo section div p{ 
+.tarjeta-revista2 div p{ 
     color: var(--font-gris-claro);
     margin-bottom: 0.2rem;
     text-align: left;
@@ -508,29 +524,21 @@ button:hover, .boton-enlace:hover{
 
 }
 
-.catalogo section div button{
+.tarjeta-revista2 div button{
     width:48%;
 }
 
 
 /* CONTACTO FORM /INPUTS */
 
-/* .contacto form{
-    border: 1px solid crimson;
-} */
-
-.contacto section:first-child{
-    margin-bottom: 1.2rem;
-    width: 45%;
+.contenedor-contacto>div{
+    flex: 1 1 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
 }
-
-.contacto section:last-child{
-    width: 45%;
-}
-
-.contacto p{
+.contenedor-contacto p{
     color: var(--font-gris-claro);
-    font-weight: bold;
 }
 
 fieldset{
@@ -538,6 +546,7 @@ fieldset{
 }
 
 label{
+    font-weight: 600;
     color: var(--font-gris-claro);
     display: block;
     margin-bottom: 0.2rem;
@@ -548,13 +557,19 @@ input{
     padding-bottom: 0.3rem;
 }
 
-input:focus, textarea:focus{
+input:focus, 
+textarea:focus{
     outline: none;
     box-shadow: 0 0 0 2px #5f5959;
 }
 
+::placeholder{
+    font-size: 0.8rem;
 
-input,textarea{
+}
+
+input,
+textarea{
     color: var(--font-gris);
     border: none;
     border-bottom: 1px solid var(--font-gris);
@@ -565,28 +580,26 @@ input,textarea{
 
 textarea{
     border-left: 1px solid var(--font-gris-claro);
-    min-width: 80%;
-    max-width: 100%;
-
+    resize: none;
 }
 
 fieldset button{
     width: 100%;
 }
 
-
-.contacto address{
+.contenedor-contacto address{
     border-left: 2px solid var(--font-color2);
     padding-left: 0.4rem;
 }
 
 iframe{
+    filter: invert(90%) grayscale(1);
     margin-top: 0.6rem;
     border-radius: 2px;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
 }
-/* Añadir ACTION y INPUT FIELD COLOR */
-
-
 
 /*TALENTOS*/
 .talento{
@@ -596,7 +609,6 @@ iframe{
     padding: 1rem;
     margin-bottom: 2rem;
     color: var(--border-color);
-    
 }
 
 .contenedor-talentos{
@@ -605,7 +617,6 @@ iframe{
     gap: 1rem;
     flex-direction: column;
     flex-wrap: wrap;
-
 }
 
 .talento>figure{
@@ -634,8 +645,6 @@ iframe{
 .talento>div h3{
     color: var(--font-gris-claro);
 }
-
-
 
 /*FOOTER*/
 footer{
@@ -684,20 +693,7 @@ footer>p{
     color: var(--border-color);
 }
 
-@media(max-width: 500px){
-
-    .contacto section:first-child{
-
-    width: 100%;
-}
-
-.contacto section:last-child{
-    width: 100%;
-}
-}
-
 @media(min-width: 768px){
-
 
     .contenedor{
         flex-direction: row;
@@ -705,6 +701,20 @@ footer>p{
         flex: 1 1 25%;
         margin-bottom: 2rem;
     }
+
+    .contenedor-contacto{
+        max-width: 100%;
+        margin-bottom: 2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .contenedor-contacto>section{
+        flex: 1 1 45%;
+        min-width: 30vw;
+    }
+
     main{
         width: 80%;
     }
@@ -751,20 +761,13 @@ footer>p{
         gap: 4rem;
     }
 
-    .contacto section:first-child{
-
-    width: 100%;
-}
-
-    .contacto section:last-child{
-    width: 100%;
-    }
 }
 
 
 /*MEDIA-Q DESKTOP*/
 @media(min-width: 1024px){
-    .contenedor, .contenedor-talentos{
+    .contenedor, .contenedor-talentos,
+    .contenedor-contacto{
         max-width: 95%;
         gap: 2vw;
         margin-top: 2rem;   
@@ -781,14 +784,11 @@ footer>p{
         min-width: 200px;
     }
 
-
     .noticia{
         max-width: 30%;
         flex: 1 1 25%;
         margin-bottom: 3rem;
         min-width: 10vw;
-
-        
     }
 
     nav{
@@ -808,7 +808,8 @@ footer>p{
     }
 
     .contenedor>h2, 
-    .contenedor-talentos>h2{
+    .contenedor-talentos>h2,
+    .contenedor-contacto>h2{
         display: inline-block;
         width: 100%;
 
@@ -837,6 +838,10 @@ footer>p{
         gap: 5rem;
         flex-direction: column;
         flex-wrap: wrap;
+    }
+
+    .contenedor-contacto>section{
+        flex: 1 1 45%;
     }
 
     .talento>figure{
@@ -876,14 +881,5 @@ footer>p{
         grid-column: auto;
     }
 
-
-    .contacto section:first-child{
-
-    width: 45%;
-}
-
-    .contacto section:last-child{
-    width: 45%;
-    }
 }
 
