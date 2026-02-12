@@ -151,8 +151,11 @@ Ejemplos:
 
 ## Demo
 
-Enlace a GitHub Pages / Vercel / Netlify (si está desplegado).
+Enlace a GitHub Pages:
 
+- https://github.com/josesalazar2025/proyecto_editorial
+- https://github.com/NzingaMbande/proyecto_editorial
+- https://github.com/NzingaMbande/proyecto_editorial-rama-/tree/main
 ---
 
 - HTML validado con W3C ✔
