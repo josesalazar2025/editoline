@@ -248,7 +248,6 @@ h3{
     font-size: clamp(var(--h3-section-min), var(--h3-section-ideal), var(--h3-section-max));
     letter-spacing: 0.1rem;
     text-transform: uppercase;
-    
     margin-bottom: 0.8rem;
     margin-top: 0.8rem;
 }
@@ -257,7 +256,6 @@ button a{
     color: var(--font-gris-claro);
     text-decoration: none;
     font-weight: bold;
-
 }
 
 /*MAIN*/
