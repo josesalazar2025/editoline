@@ -1,0 +1,898 @@
+@charset "utf-8";
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 16px;
+    scroll-behavior: smooth;
+    height: 100%;
+    --font-text: "Roboto", sans-serif;
+    --font-titular: "Vina Sans", sans-serif;
+    --font-titular2: "New Amsterdam", sans-serif;
+    --bg-color: #262626;
+    --bg-color2: rgb(16, 141, 108);
+    --border-color: rgba(167, 167, 167, 0.758);
+    --font-color: #ca3737;
+    --font-color2:  #f7c973;
+    --font-color3: #e64949;
+    --font-gris: rgb(133, 133, 133);
+    --font-gris-claro: rgb(202, 202, 202);
+
+    --h1-min: 2rem;
+    --h1-ideal: 1.400rem + 3.000vw;
+    --h1-max: 5rem;
+
+    --nav-title-min: 2rem;
+    --nav-title-ideal: 1.840rem + 0.800vw;
+    --nav-title-max: 2.8rem;
+
+    --h2-section-min: 1.4rem;
+    --h2-section-ideal: 1.240rem + 0.800vw;
+    --h2-section-max: 2.2rem;
+
+    --h3-section-min: 1.2rem;
+    --h3-section-ideal: 1.120rem + 0.400vw;
+    --h3-section-max: 1.6rem;
+
+    --p-min: 1rem;
+    --p-ideal: 0.975rem + 0.125vw;
+    --p-max: 1.125rem;
+    }
+
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--font-text);
+    color: var(--font-gris);
+    background-color:var(--bg-color);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5vh 65vh 1fr auto;
+    grid-template-areas:
+        "navegador"
+        "header"
+        "main"
+        "footer";
+}
+
+
+/*NAVEGADOR PRINCIPAL*/
+nav{
+    text-transform: uppercase;
+    background-color: var(--bg-color);
+    grid-area: navegador;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-self: center;
+    margin-top: 0;
+    z-index: 1000;
+
+}
+
+nav>p{
+    font-size: clamp(var(--nav-title-min), var(--nav-title-ideal), var(--nav-title-max));
+    padding-left: 1.2rem;
+    font-weight: 100;
+    width: 100%;
+    color: var(--font-color3);
+    font-family: var(--font-titular);
+    justify-self: center;
+}
+
+nav>ul{
+    display: none;
+    justify-self: right;
+    width: 100%;
+
+}
+
+ul li{
+    display: inline;
+    padding-left: 2rem;
+}
+
+li a{
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--font-color2);
+    font-weight: 600;
+}
+
+nav li a:hover{
+    color: var(--font-color3);
+    cursor: pointer; 
+}
+
+nav li a[aria-current="page"]{                                               
+    color: var(--font-color3);
+                                                                        
+}      
+
+header{
+    background-color:var(--bg-color);
+    grid-area: header;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+}
+
+.header-slider{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: 100%;
+}
+
+/* Firefox scrollbar */
+.header-slider{
+    scrollbar-width: thin;
+    scrollbar-color: var(--font-color) var(--bg-color);
+}
+
+/* Chrome, Safari, Edge */
+.header-slider::-webkit-scrollbar{
+    height: 8px;
+}
+
+.header-slider::-webkit-scrollbar-track{
+    background: var(--bg-color);
+}
+
+.header-slider::-webkit-scrollbar-thumb{
+    background: var(--font-color);
+    border-radius: 4px;
+}
+
+.header-slider img{
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    scroll-snap-align: start;
+}
+
+/* IMG BANNER */
+#shila{
+    object-position: 75%;
+}
+
+#blue{
+    object-position: 30%;
+}
+
+#ray{
+    object-position: 63%;
+}
+
+h1{
+    font-family: var(--font-titular);
+    color:var(--font-color3);
+    font-size: clamp(var(--h1-min), var(--h1-ideal), var(--h1-max));
+    position: absolute;
+    font-weight: 100;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    align-self: flex-end;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+nav label.material-symbols-outlined{
+    font-size: 2.5rem;
+    padding-right: 1rem;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+/*MENÚ HAMBURGUESA OCULTO*/
+
+#menu-toggle:checked ~ ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 1rem 0;
+    gap: 1rem;
+    text-align: center;
+}
+
+cite{
+    color: var(--font-gris-claro);
+    font-style: normal;
+    font-size: var(--font-text);
+}
+
+p{
+    font-size: clamp(var(--p-min), var(--p-ideal), var(--p-max));
+}
+
+
+#titulo-oculto{
+    display: none;
+}
+h2{
+    letter-spacing: 0.1rem;
+    font-family: var(--font-titular2);
+    color: var(--font-color2);
+    margin-bottom: 1rem;
+    text-justify: auto;
+    font-weight: 700;
+    font-size: clamp(var(--h2-section-min), var(--h2-section-ideal), var(--h2-section-max));
+    border-bottom: 2px solid #f7c973a9;
+}
+
+h3{
+    color: var(--font-gris-claro);
+    font-family: var(--font-titular2);
+    font-size: clamp(var(--h3-section-min), var(--h3-section-ideal), var(--h3-section-max));
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+button a{
+    color: var(--font-gris-claro);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*MAIN*/
+main{
+    display: grid;
+    grid-area: main;
+    width: 100%;
+    justify-self: center;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+
+#intro{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--border-color);
+}
+
+#intro>h2, 
+footer>h2{
+    border-bottom: none;
+}
+#intro >p{
+    color: var(--font-gris-claro);
+    padding-bottom: 1rem;
+}
+
+
+/* TOP SELLERS / COLLECTORS / NOTICIAS*/
+.contenedor,
+.contenedor-talentos,
+.contenedor-contacto{
+    margin-top: 2.5rem;
+    max-width: 90%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-self: center;
+}
+
+.contenedor-contacto{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 4rem;
+}
+
+.contenedor>h2, 
+.contenedor-talentos>h2{
+    display: inline-block;
+    width: 100%;
+}
+
+.tarjeta-revista, .noticia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 1 1 40%;
+    background-color: #313131;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.tarjeta-revista2{
+    background-color: #313131;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.noticia{
+    justify-items: center;
+    justify-content: flex-start;
+    flex: 1 1 100%;
+
+}
+.noticia>h3{
+    order:1;
+    color: var(--font-gris-claro);
+}
+
+.noticia>figure{
+    order: 0;
+}
+
+.noticia>p{
+    order:2;
+}
+
+.boton-enlace{
+    order:3;
+    margin-top: auto;
+}
+
+.tarjeta-revista>div{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.tarjeta-revista>.boton-enlace{
+    margin-top: 1rem;
+}
+
+.tarjeta-revista figure,
+.tarjeta-revista2 figure,
+.noticia figure{
+    flex: 1 1 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.noticia figure{
+    flex: 0 1 auto;
+}
+
+.tarjeta-revista>figure>figcaption{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    align-self: flex-end;
+    padding-right: 0.3rem;
+    padding-bottom: 0.8em;
+    text-align: right;
+    color: var(--font-gris-claro);
+
+}
+
+.tarjeta-revista>figure>figcaption>p{
+    font-size: 0.9rem;
+    font-weight: 200;
+}
+
+.tarjeta-revista figcaption>p{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.tarjeta-revista figure>img,
+.tarjeta-revista2 figure>img{
+    width: 100%;
+    object-fit: contain;
+    transition: box-shadow 1s ease-in-out;
+}
+
+.noticia figure>img, .noticia>video{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    object-position: center top;
+    transition: box-shadow 1s ease-in-out;
+}
+
+.noticia>video{
+    border-radius: 0.5rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+main figure>img{
+    border-radius: 0.5rem;
+}
+
+.tarjeta-revista figure>img:hover,
+.tarjeta-revista2 figure>img:hover,
+.noticia figure>img:hover{
+    box-shadow: 1px 1px 20px 2px var(--font-color3);
+}
+
+.boton-favorito{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 10;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--border-color);
+    font-size: clamp(var(--p-min), var(--p-ideal), var(--p-max));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-favorito:hover{
+    background-color: var(--font-color3);
+    color: var(--font-color2);
+    transform: scale(1.15);
+}
+
+button, 
+.boton-enlace{
+    text-align: center;
+    width: 70%;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    padding: 0.35rem;
+    border: 1px solid var(--border-color);
+    color: var(--font-gris-claro);
+    justify-self: flex-end;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#intro>a{
+    margin-right: 0.5rem;
+    width: 35%;
+    align-self: flex-end;
+
+}
+
+.boton-enlace{
+    text-decoration: none;
+    width: 100%;
+}
+
+button:hover, 
+.boton-enlace:hover{
+    cursor: pointer;
+    background-color: var(--bg-color2);
+    color: var(--font-gris-claro);
+}
+
+.tarjeta-revista>div p{
+    justify-self: flex-start;
+    color: var(--font-gris);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.tarjeta-revista h3, 
+.tarjeta-revista2 h2, 
+.contenedor-contacto>h2{
+    display: none;
+}
+
+
+/* CATALOGO */
+.tarjeta-revista2 h3{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+.tarjeta-revista2 div {
+    display: block;
+    object-fit: contain;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+
+.tarjeta-revista2 div:nth-child(odd){
+    border-left: 2px solid var(--font-color2);
+}
+
+
+.tarjeta-revista2 div p, 
+.tarjeta-revista2 div cite{ 
+    color: var(--font-gris-claro);
+    margin-bottom: 0.2rem;
+    text-align: left;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+}
+
+
+.tarjeta-revista2 div button{
+    width:48%;
+}
+
+
+/* CONTACTO FORM /INPUTS */
+
+.contenedor-contacto>div{
+    flex: 1 1 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-contacto p{
+    color: var(--font-gris-claro);
+}
+
+fieldset{
+    border: none;
+}
+
+label{
+    font-weight: 600;
+    color: var(--font-gris-claro);
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+input{
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+input:focus, 
+textarea:focus{
+    outline: none;
+    box-shadow: 0 0 0 2px #5f5959;
+}
+
+::placeholder{
+    font-size: 0.8rem;
+
+}
+
+input,
+textarea{
+    color: var(--font-gris);
+    border: none;
+    border-bottom: 1px solid var(--font-gris);
+    background-color: var(--bg-color);
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+textarea{
+    border-left: 1px solid var(--font-gris-claro);
+    resize: none;
+}
+
+fieldset button{
+    width: 100%;
+}
+
+.contenedor-contacto address{
+    font-style: normal;
+    border-left: 2px solid var(--font-color2);
+    padding-left: 0.4rem;
+    font-style: normal; 
+    font-weight: lighter;
+}
+
+.contenedor-contacto address>p:nth-of-type(1){
+    font-weight: 700;
+}
+
+iframe{
+    filter: invert(90%) grayscale(1);
+    margin-top: 0.6rem;
+    border-radius: 2px;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+}
+
+/*TALENTOS*/
+.talento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    color: var(--font-gris-claro);
+}
+
+.contenedor-talentos{
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.talento>figure{
+    min-width: 10%;
+    flex: 1 0 30%;
+}
+.talento>figure img{
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.talento>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.talento>h3{
+    display: none;
+}
+
+.talento>div p{
+    font-size: clamp(var(--p-min), var(--p-ideal), var(--p-max));
+}
+
+.talento>div h3{
+    color: var(--font-gris-claro);
+}
+
+/*FOOTER*/
+footer{
+    color: var(--font-gris);
+    background-color: #373636;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: start;
+    justify-items: center;
+    margin-top: 1rem;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+footer>h2{
+    grid-column: 1 / -1;
+    color: var(--font-color3);
+    font-family: var(--font-titular2);
+}
+
+footer>p{
+    grid-column: 1 / -1;
+}
+
+footer>div h3{
+    margin: 0;
+    border: none;
+    color: #f7c973;
+
+}
+
+footer ul>li a{
+    display: block;
+    color: var(--border-color);
+}
+
+footer ul>li a:hover{
+    color: var(--font-color);
+}
+
+footer>p{
+    font-size: 0.7rem;
+    color: var(--border-color);
+}
+
+@media(min-width: 768px){
+
+    .contenedor{
+        flex-direction: row;
+        max-width: 100%;
+        flex: 1 1 25%;
+        margin-bottom: 2rem;
+    }
+
+    .contenedor-contacto{
+        max-width: 100%;
+        margin-bottom: 2rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .contenedor-contacto>section{
+        flex: 1 1 45%;
+        min-width: 30vw;
+    }
+
+    main{
+        width: 80%;
+    }
+
+    .noticia{
+        flex: 1 1 25%;
+        min-width: 30vw;
+    }
+
+
+    .tarjeta-revista{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        flex: 1 1 30%;
+        min-width: 20vw;
+    }
+    .talento{
+        flex-direction: row;
+        }
+
+    .contenedor-talentos{
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .talento>figure{
+        min-width: 200px;
+        flex: 1 0 25%;
+    }
+
+    .talento>figure img{
+        min-width: 200px;
+    }
+
+    .talento>div{
+        padding-left: 2rem;
+    }
+
+    footer{
+        gap: 4rem;
+    }
+
+}
+
+
+/*MEDIA-Q DESKTOP*/
+@media(min-width: 1024px){
+    .contenedor, .contenedor-talentos,
+    .contenedor-contacto{
+        max-width: 95%;
+        gap: 2vw;
+        margin-top: 2rem;   
+        margin-bottom: 2rem;
+    }
+
+    .tarjeta-revista, .noticia{
+        max-width: 30%;
+        flex: 1 1 10%;
+        margin-bottom: 3rem;
+    }
+
+    .tarjeta-revista{
+        min-width: 200px;
+    }
+
+    .noticia{
+        max-width: 30%;
+        flex: 1 1 25%;
+        margin-bottom: 3rem;
+        min-width: 10vw;
+    }
+
+    nav{
+        width: 75%;
+        border-radius: 0% 0% 0.5rem 0.5rem;
+
+    }
+
+    nav label.material-symbols-outlined{
+        display: none;
+    }
+
+    nav>ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .contenedor>h2, 
+    .contenedor-talentos>h2,
+    .contenedor-contacto>h2{
+        display: inline-block;
+        width: 100%;
+
+    }
+
+    nav>p{
+        padding-left: 2rem;
+        width: 50%;
+    }
+    h1{
+        right: 0.8rem;
+        bottom: 0.5rem;
+    }
+
+    main{
+        margin-top: 3rem;
+        width: 70%;
+    }
+
+    .talento{
+        justify-content: center;
+        }
+
+    .contenedor-talentos{
+        align-items: flex-start;
+        gap: 5rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .contenedor-contacto>section{
+        flex: 1 1 45%;
+    }
+
+    .talento>figure{
+        max-width: 30%;
+        flex: 1 1 20%;
+    }
+
+    .talento>figure img{
+        min-width: 200px;
+    }
+
+    .talento>div{
+        align-self: flex-start;
+        flex-wrap: wrap;
+        width: 50%;
+    }
+
+    #intro>a{
+        width: 20%;
+    }
+
+    #intro>p{
+        padding-bottom: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    main{
+        margin-bottom: 10rem;
+    }
+
+    footer{
+        grid-template-columns: auto auto auto;
+        align-items: center;
+    }
+
+    footer>h2{
+        grid-column: auto;
+    }
+
+}
+

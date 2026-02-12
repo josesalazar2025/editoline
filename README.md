@@ -46,7 +46,7 @@ principal factor diferenciador.
   - Scroll Snap
   - Transiciones
   - Transformaciones
-- Git y GitHub para control de versiones (en caso de haberlo usado)
+- Git y GitHub 
 
 ---
 
@@ -55,18 +55,26 @@ principal factor diferenciador.
 /editoline
 │
 ├── index.html
+├── catalogo.html
+├── noticias.html
+├── talent.html
+├── contacto.html
 ├── css/
 │ └── styles.css
 ├── assets/
 │ ├── images/
-│ └── fonts/
+│ └── video/
 └── README.md
 
 ---
 
 Breve explicación de la organización:
 
-- `index.html`: estructura principal del documento.
+- `index.html`: introducción al concepto de la editorial y los artículos más vendidos y en tendencia.
+- `catalogo.html` : categorías de las revistas y una descripción más amplia de cada una. 
+- `noticias.html`: articulos de prensa online relevantes para el concepto de la editorial.
+- `talent.html` : pensada en reseñar brevemente a los artistas que participan con sus proyects en la editorial.
+- `contacto.html`: formulario para enviar propuestas artísticas y mapa con la dirección de las oficinas del CIFO-La Violeta.
 - `css/`: hojas de estilo.
 - `assets/`: recursos estáticos.
 
@@ -102,26 +110,28 @@ textos alternativos para los lectores de pantalla, se mantuvo una separación ad
 
 ## Retos encontrados
 
+José:
+
 Entorno colaborativo:
-Dado que es la segunda vez que trabajamos con GitHub de forma colaborativa, el inicio del proyecto fué un poco desordenado y resultaba en 
+Al ser la segunda vez que trabajo con GitHub de forma colaborativa, el inicio del proyecto fué un poco desordenado y resultaba en 
 conflictos frecuentes en los PR de cada uno. 
 La solución fué dedicarle más tiempo a la fase de planificación y unificación de criterios, además de repasar un poco el uso de GitHub en la
-terminal.
+terminal, lo cual me permitió consolidar conocimientos previos.
 
 Layout en el footer:
 Estabamos ya habituados a hacer un footer con simplemente el autor y copyright y optamos por un diseño más completo.
 Hacer que los elementos adoptaran la ubicación deseada y fluyeran con responsive adecuado requirió de varios intentos con grid/flex.
 
+Mejoré mucho las habilidades de uso de flex/grid y de las tipografias fluidas, además de aclarar algunas etiquetas de html cuyo uso lo tenía confundido.
 
-Explicar brevemente:
+Mary:
+Durante la creación de la estructura de la página mi mayor reto fue ajustar las tarjetas y su contenido, ya que dependiendo de cada página, 
+el contenido de cada main varía pero todas la páginas debían mantener una estructura y estética común. Además había que tener el cuenta el responsive y controlar los ajustes dependiento 
+del tamaño de la pantalla sin sacrificar el aspecto informativo o comercial de la página.
 
-- Qué problemas surgieron.
-- Qué soluciones se aplicaron.
-- Qué se aprendió técnicamente.
+Gracias a ello aprendí como se crea una buena base para el HTML, el uso correcto de Github para mantener mi trabajo y el del compañero al día a pesar de los cambios. 
+Como priorizar ciertas líneas de código, el uso correcto de selectores dependiendo del main donde se trabajaba, que también ayudaba a no pisar el trabajo del compañero.
 
-Este apartado demuestra pensamiento técnico.
-
----
 
 ## Mejoras futuras
 
@@ -142,9 +152,19 @@ Enlace a GitHub Pages / Vercel / Netlify (si está desplegado).
 
 ---
 
-## Autores
+- HTML validado con W3C ✔
+- CSS validado ✔
+- Lighthouse Performance: 89
+- Lighthouse Accessibility: 94
+- Lighthouse SEO: 100
+- Lighthouse Best Practices: 100
 
-Nzinga Mbande y José Salazar
+
+
+## Autores
+José Salazar
+Mary Ramos (Nzinga Mbande)
+
 Curso de confección y publicación de páginas web CIFO-La Violeta
 Barcelona, 2026
 
