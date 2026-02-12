@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    top:0;
 }
 
 :root{
@@ -17,8 +16,7 @@
     --font-titular: "Vina Sans", sans-serif;
     --font-titular2: "New Amsterdam", sans-serif;
     --bg-color: #262626;
-    --bg-color2: rgb(127, 255, 212);
-    --bg-color3: rgb(16, 141, 108);
+    --bg-color2: rgb(16, 141, 108);
     --border-color: rgba(167, 167, 167, 0.758);
     --font-color: #ca3737;
     --font-color2:  #f7c973;
@@ -114,11 +112,12 @@ li a{
 
 nav li a:hover{
     color: var(--font-color3);
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 nav li a[aria-current="page"]{                                               
-    color: var(--font-color3);                                                                             
+    color: var(--font-color3);
+                                                                        
 }      
 
 header{
@@ -137,6 +136,13 @@ header{
     height: 100%;
 }
 
+/* Firefox scrollbar */
+.header-slider{
+    scrollbar-width: thin;
+    scrollbar-color: var(--font-color) var(--bg-color);
+}
+
+/* Chrome, Safari, Edge */
 .header-slider::-webkit-scrollbar{
     height: 8px;
 }
@@ -180,8 +186,8 @@ h1{
     font-size: clamp(var(--h1-min), var(--h1-ideal), var(--h1-max));
     position: absolute;
     font-weight: 100;
-    right: 1rem;
-    bottom: 0.5rem;
+    right: 0.7rem;
+    bottom: 0.7rem;
     align-self: flex-end;
 }
 
@@ -190,7 +196,7 @@ h1{
 }
 
 nav label.material-symbols-outlined{
-    font-size: 2.5em;
+    font-size: 2.5rem;
     padding-right: 1rem;
     color: var(--font-color);
     cursor: pointer;
@@ -221,8 +227,11 @@ p{
     font-size: clamp(var(--p-min), var(--p-ideal), var(--p-max));
 }
 
+
+#titulo-oculto{
+    display: none;
+}
 h2{
-    /* text-shadow: 0.5px 0.5px 8px var(--font-color3); */
     letter-spacing: 0.1rem;
     font-family: var(--font-titular2);
     color: var(--font-color2);
@@ -262,7 +271,7 @@ main{
     width: 100%;
     justify-self: center;
     overflow: hidden;
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
 }
 
 #intro{
@@ -272,7 +281,7 @@ main{
     color: var(--border-color);
 }
 
-#intro>h2, #contenedor-footer>h2{
+#intro>h2, footer>h2{
     border-bottom: none;
 }
 #intro >p{
@@ -285,7 +294,7 @@ main{
 /* TOP SELLERS / COLLECTORS / NOTICIAS*/
 .contenedor, 
 .contenedor-talentos{
-    margin-top: 2rem;   
+    margin-top: 2.5rem;   
     max-width: 90%;
     display: flex;
     gap: 2rem;
@@ -329,7 +338,7 @@ main{
     order:2;
 }
 
-.boton-noticias{
+.boton-enlace{
     order:3;
 }
 
@@ -367,7 +376,7 @@ main{
     transition: box-shadow 1s ease-in-out;
 }
 
-.noticia figure>img, .noticia figure>iframe{
+.noticia figure>img, .noticia>video{
     width: 100%;
     object-fit: cover;
     aspect-ratio: 16/9;
@@ -375,31 +384,20 @@ main{
     transition: box-shadow 1s ease-in-out;
 }
 
-.noticia figure>iframe{
+.noticia>video{
     border-radius: 0.5rem;
     padding: 0;
     margin: 0;
+    border: 0;
 }
 
 main figure>img{
     border-radius: 0.5rem;
 }
 
-/*FILTROS PARA IMAGENES-HACER PRUEBAS, NO ME CONVENCEN TANTO*/
-
-/* .tarjeta-revista figure>img {
-    filter: sepia(10%) saturate(100%) hue-rotate(-60deg);
-    transition: filter 0.4s ease;
-}
-
-.tarjeta-revista figure>img:hover {
-    filter: none;
-} */
-
 .tarjeta-revista figure>img:hover,
 .noticia figure>img:hover{
     box-shadow: 1px 1px 20px 2px var(--font-color3);
-    cursor: pointer;
 }
 
 .boton-favorito{
@@ -427,7 +425,7 @@ main figure>img{
     transform: scale(1.25);
 }
 
-button, .boton-noticias{
+button, .boton-enlace{
     text-align: center;
     width: 70%;
     border-radius: 1rem;
@@ -439,20 +437,20 @@ button, .boton-noticias{
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-#intro>button{
+#intro>a{
     margin-right: 0.5rem;
     width: 35%;
     align-self: flex-end;
 
 }
-.boton-noticias{
+.boton-enlace{
     text-decoration: none;
     width: 100%;
 }
 
-button:hover, .boton-noticias:hover{
+button:hover, .boton-enlace:hover{
     cursor: pointer;
-    background-color: var(--bg-color3);
+    background-color: var(--bg-color2);
     color: var(--font-gris-claro);
 }
 
@@ -465,10 +463,6 @@ button:hover, .boton-noticias:hover{
 
 .tarjeta-revista h3, .tarjeta-revista h2{
     display: none;
-    /* align-self: center;
-    position: relative;
-    background-color:var(--bg-color2);
-    z-index: 1000; */
 }
 
 
@@ -479,9 +473,6 @@ button:hover, .boton-noticias:hover{
     width: 100%;
 }
 
-.catalogo section:not(h2){
-    display: inline-block;
-}
 
 .catalogo section div {
     display: block;
@@ -543,6 +534,11 @@ label{
 input{
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    box-shadow: 0 0 0 2px #5f5959;
 }
 
 ::placeholder{
@@ -616,7 +612,7 @@ iframe{
     flex-direction: column;
 }
 
-.talento>h2{
+.talento>h3{
     display: none;
 }
 
@@ -636,33 +632,31 @@ footer{
     background-color: #373636;
     grid-area: footer;
     display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: start;
     justify-items: center;
-    align-content: center;
     margin-top: 1rem;
     padding: 2rem 1rem;
     gap: 1.5rem;
+    text-align: left;
 }
 
-#contenedor-footer{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    justify-items: center;
-    gap: 1.5rem;
-    text-align: center;
-}
-
-#contenedor-footer>h2{
+footer>h2{
     grid-column: 1 / -1;
     color: var(--font-color);
     font-family: var(--font-titular2);
 }
 
-#contenedor-footer>div h3{
+footer>p{
+    grid-column: 1 / -1;
+}
+
+footer>div h3{
     margin: 0;
     border: none;
     color: #f7c973;
-    
+
 }
 
 footer ul>li a{
@@ -679,13 +673,6 @@ footer>p{
     color: var(--border-color);
 }
 
-
-
-
-/*M: Hay que mirar los contenedores del catalago porque tienen mucho MARGIN */
-/*MEDIA-Q TABLET*/
-
-/*Añado query para la página de CONTACTO */
 @media(max-width: 500px){
 
     .contacto section:first-child{
@@ -749,13 +736,8 @@ footer>p{
         padding-left: 2rem;
     }
 
-    #contenedor-footer{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+    footer{
         gap: 4rem;
-        text-align: left;
     }
 
     .contacto section:first-child{
@@ -826,8 +808,8 @@ footer>p{
         width: 50%;
     }
     h1{
-        right: 1.2rem;
-        bottom: 0.2rem;
+        right: 0.8rem;
+        bottom: 0.5rem;
     }
 
     main{
@@ -861,7 +843,7 @@ footer>p{
         width: 50%;
     }
 
-    #intro>button{
+    #intro>a{
         width: 20%;
     }
 
@@ -872,6 +854,15 @@ footer>p{
 
     main{
         margin-bottom: 10rem;
+    }
+
+    footer{
+        grid-template-columns: auto auto auto;
+        align-items: center;
+    }
+
+    footer>h2{
+        grid-column: auto;
     }
 
     /* fieldset{
