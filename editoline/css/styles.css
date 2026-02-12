@@ -377,25 +377,32 @@ footer>h2{
 .tarjeta-revista>figure>figcaption{
     position: absolute;
     top: 0;
+    width: 100%;
     bottom: 0;
     align-self: flex-end;
     padding-right: 0.3rem;
-    padding-bottom: 0.8em;
+    padding-bottom: 0.5rem;
     text-align: right;
-    color: var(--font-gris-claro);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.9px);
+    -webkit-backdrop-filter: blur(10.9px);
 
-}
-
-.tarjeta-revista>figure>figcaption>p{
-    font-size: 0.9rem;
-    font-weight: 200;
 }
 
 .tarjeta-revista figcaption>p{
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgb(226, 224, 224);
+
 }
 
+.tarjeta-revista figcaption>cite{
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgb(226, 224, 224);
+}
 
 .tarjeta-revista figure>img,
 .tarjeta-revista2 figure>img{
@@ -512,23 +519,46 @@ button:hover,
     display: block;
     object-fit: contain;
     margin-top: 1.5rem;
-    margin-bottom: 1rem;
-
+    margin-bottom: 0.5rem;
 }
 
-.tarjeta-revista2 div:nth-child(odd){
+.tarjeta-revista2 > section > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     border-left: 2px solid var(--font-color2);
 }
 
+.tarjeta-revista2 > section > div > div{
+    margin: 0;
+    border-left: none;
+}
 
-.tarjeta-revista2 div p, 
-.tarjeta-revista2 div cite{ 
+.tarjeta-revista2 > section > div > div:last-child{
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+.tarjeta-revista2 div p,
+.tarjeta-revista2 div cite{
     color: var(--font-gris-claro);
     margin-bottom: 0.2rem;
     text-align: left;
     padding-left: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
+
+.tarjeta-revista2 > section > div > div:last-child p{
+    text-align: right;
+}
+
+.tarjeta-revista2 div cite{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+
 
 
 .tarjeta-revista2 div button{
