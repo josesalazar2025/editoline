@@ -68,7 +68,7 @@ nav{
     text-transform: uppercase;
     background-color: var(--bg-color);
     grid-area: navegador;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
@@ -85,10 +85,9 @@ nav>p{
     font-size: clamp(var(--nav-title-min), var(--nav-title-ideal), var(--nav-title-max));
     padding-left: 1.2rem;
     font-weight: 100;
-    width: 100%;
+    flex: 1;
     color: var(--font-color3);
     font-family: var(--font-titular);
-    justify-self: center;
 }
 
 nav>ul{
@@ -595,10 +594,12 @@ fieldset button{
 
 .contenedor-contacto address{
     font-style: normal;
+    font-family: var(--font-text);
     border-left: 2px solid var(--font-color2);
     padding-left: 0.4rem;
     font-style: normal; 
-    font-weight: lighter;
+    font-weight: 300;
+    margin-bottom: 3rem;
 }
 
 .contenedor-contacto address>p:nth-of-type(1){
@@ -704,6 +705,23 @@ footer ul>li a:hover{
 footer>p{
     font-size: 0.7rem;
     color: var(--border-color);
+}
+
+/* MÓVIL EN LANDSCAPE */
+@media (max-width: 767px) and (orientation: landscape) {
+    body {
+        grid-template-rows: auto 50vh 1fr auto;
+    }
+
+    nav {
+        min-height: fit-content;
+        flex-wrap: wrap;
+    }
+
+    #menu-toggle:checked ~ ul {
+        position: relative;
+        top: auto;
+    }
 }
 
 @media(min-width: 768px){
@@ -817,7 +835,7 @@ footer>p{
     nav>ul{
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .contenedor>h2, 
