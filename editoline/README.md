@@ -53,7 +53,6 @@ principal factor diferenciador.
 ## 📂 Estructura del proyecto
 
 /editoline
-│
 ├── index.html
 ├── catalogo.html
 ├── noticias.html
@@ -123,6 +122,7 @@ Estabamos ya habituados a hacer un footer con simplemente el autor y copyright y
 Hacer que los elementos adoptaran la ubicación deseada y fluyeran con responsive adecuado requirió de varios intentos con grid/flex.
 
 Mejoré mucho las habilidades de uso de flex/grid y de las tipografias fluidas, además de aclarar algunas etiquetas de html cuyo uso lo tenía confundido.
+Aprendí como hacer los análisis de Lighthouse con developer tools de Google Chrome.
 
 Mary:
 Durante la creación de la estructura de la página mi mayor reto fue ajustar las tarjetas y su contenido, ya que dependiendo de cada página, 
@@ -137,14 +137,17 @@ Como priorizar ciertas líneas de código, el uso correcto de selectores dependi
 
 Ejemplos:
 
-- Añadir funcionalidad con JavaScript.
-- Optimización de rendimiento.
+- Header con slideshow automático
+- Botones de like accionables.
+- Implementación de un carrito de compra.
+- Páginas de detalles para cada revista con descripción completa.
+- Sección de subscripción.
+- Adjuntar archivos para el formulario.
+- Barra de búsqueda.
+- Ampliar categorías.
+- Optimización de rendimiento ya que el sitio hace uso de muchas imagenes y poco texto.
 - Mejora de accesibilidad.
-- Añadir modo oscuro.
 
-Este apartado demuestra mentalidad profesional.
-
----
 
 ## Demo
 
@@ -169,9 +172,6 @@ Curso de confección y publicación de páginas web CIFO-La Violeta
 Barcelona, 2026
 
 ---
-
-
-
 
 
 
