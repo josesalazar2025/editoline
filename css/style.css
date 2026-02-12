@@ -309,21 +309,22 @@ main{
     width: 100%;
 }
 
-.tarjeta-revista{
+.tarjeta-revista, .noticia{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
     flex: 1 1 40%;
+    background-color: #313131;
+    padding: 0.5rem;
+    border-radius: 1rem;
 }
 
 .noticia{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     justify-items: center;
-    gap: 0.5rem;
+    justify-content: flex-start;
     flex: 1 1 100%;
+
 }
 .noticia>h3{
     order:1;
@@ -340,6 +341,7 @@ main{
 
 .boton-enlace{
     order:3;
+    margin-top: auto;
 }
 
 .tarjeta-revista>div{
@@ -348,8 +350,11 @@ main{
     gap: 1.5rem;
 }
 
+.tarjeta-revista>.boton-enlace{
+    margin-top: 1rem;
+}
 
-.tarjeta-revista figure, 
+.tarjeta-revista figure,
 .noticia figure{
     flex: 1 1 10%;
     display: flex;
@@ -358,17 +363,27 @@ main{
     position: relative;
 }
 
+.noticia figure{
+    flex: 0 1 auto;
+}
+
 .tarjeta-revista>figure>figcaption{
     position: absolute;
     top: 0;
     bottom: 0;
     align-self: flex-end;
     padding-right: 0.3rem;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.8em;
     text-align: right;
     color: var(--font-gris-claro);
 
 }
+
+.tarjeta-revista>figure>figcaption>p{
+    font-weight: 600;
+}
+
+
 
 .tarjeta-revista figure>img{
     width: 100%;
@@ -422,15 +437,15 @@ main figure>img{
 .boton-favorito:hover{
     background-color: var(--font-color3);
     color: var(--font-color2);
-    transform: scale(1.25);
+    transform: scale(1.15);
 }
 
 button, .boton-enlace{
     text-align: center;
     width: 70%;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: transparent;
-    padding: 0.5rem;
+    padding: 0.35rem;
     border: 1px solid var(--border-color);
     color: var(--font-gris-claro);
     justify-self: flex-end;
@@ -443,6 +458,7 @@ button, .boton-enlace{
     align-self: flex-end;
 
 }
+
 .boton-enlace{
     text-decoration: none;
     width: 100%;
