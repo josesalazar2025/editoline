@@ -578,7 +578,9 @@ fieldset button{
 .contacto address{
     border-left: 2px solid var(--font-color2);
     padding-left: 0.4rem;
+    font-style: normal; 
 }
+
 
 iframe{
     margin-top: 0.6rem;
