@@ -151,16 +151,15 @@ Ejemplos:
 - Optimización de rendimiento ya que el sitio hace uso de muchas imagenes y poco texto.
 - Mejora de accesibilidad.
 - Un modo claro para la página.
+- Paginar publicaciones.
 
 
 ## Demo
 
 Enlace a GitHub Pages:
 
-- https://github.com/josesalazar2025/proyecto_editorial
-- https://github.com/NzingaMbande/proyecto_editorial
-- https://github.com/NzingaMbande/proyecto_editorial-rama-/tree/main
----
+- https://josesalazar2025.github.io/editoline/
+
 
 - HTML validado con W3C ✔
 - CSS validado ✔
