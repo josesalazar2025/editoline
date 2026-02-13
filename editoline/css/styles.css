@@ -178,6 +178,10 @@ header{
     object-position: 63%;
 }
 
+#yoo{
+    object-position: 40% 15%;
+}
+
 h1{
     font-family: var(--font-titular);
     color:var(--font-color3);
