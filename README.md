@@ -165,7 +165,7 @@ Enlace a GitHub Pages:
 - HTML validado con W3C ✔
 - CSS validado ✔
 - Lighthouse Performance: 89
-- Lighthouse Accessibility: 94
+- Lighthouse Accessibility: 95
 - Lighthouse SEO: 100
 - Lighthouse Best Practices: 100
 

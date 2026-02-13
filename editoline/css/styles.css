@@ -384,7 +384,7 @@ footer>h2{
     padding-bottom: 0.5rem;
     text-align: right;
     background: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
+    border-radius: 0px 0px 8px 8px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10.9px);
     -webkit-backdrop-filter: blur(10.9px);
