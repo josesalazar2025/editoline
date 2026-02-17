@@ -222,7 +222,7 @@ nav label.material-symbols-outlined{
 cite{
     color: var(--font-gris-claro);
     font-style: normal;
-    font-size: var(--cite-min, --cite-ideal, --cite-max);
+    font-size: clamp(var(--cite-min)), var(--cite-ideal), var(--cite-max);
 }
 
 p{
@@ -244,7 +244,8 @@ h2{
     border-bottom: 2px solid #f7c973a9;
 }
 
-h3{
+h3, 
+h3>cite{
     color: var(--font-gris-claro);
     font-family: var(--font-titular2);
     font-size: clamp(var(--h3-section-min), var(--h3-section-ideal), var(--h3-section-max));
@@ -847,7 +848,6 @@ footer>p{
     }
 
 }
-
 
 /*MEDIA-Q DESKTOP*/
 @media(min-width: 1024px){
